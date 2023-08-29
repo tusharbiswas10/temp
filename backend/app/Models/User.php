@@ -18,9 +18,16 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+       // 'name',
+       // 'email',
+       // 'password',
+       'firstName',
+       'lastName',
+       'address',
+       'phone',
+       'email',
+       'birthday',
+       'password',
     ];
 
     /**
@@ -32,6 +39,11 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public $timeStamps=false;
+    public const UPDATED_AT = null;
+public const CREATED_AT = null;
+
 
     /**
      * The attributes that should be cast.

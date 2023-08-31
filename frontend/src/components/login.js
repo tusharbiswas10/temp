@@ -10,7 +10,7 @@ function Login() {
     if (localStorage.getItem('user-info')) {
       history.push('/profile');
     }
-  }, [history]);
+  }, []);
 
   return (
     <div>

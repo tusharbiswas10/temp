@@ -26,8 +26,16 @@ async function login(){
     })
 
     result = await result.json()
-    localStorage.setItem("user-info", JSON.stringify(result))
-    history.push("/profile")
+    // Check if the user is trying to log in as an admin
+  if (email === "admin@localhost.local" && password === "admin") {
+    localStorage.setItem("user-info", JSON.stringify(result));
+    history.push("/admin"); // Redirect to admin page
+  } else {
+    localStorage.setItem("user-info", JSON.stringify(result));
+    history.push("/profile"); // Redirect to profile page
+  }
+    //localStorage.setItem("user-info", JSON.stringify(result))
+    //history.push("/profile")
     
   }
 

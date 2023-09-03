@@ -4,22 +4,26 @@ import { Link, useHistory } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import Sidebar from "./sidebar";
 function Profile() {
   let user = JSON.parse(localStorage.getItem("user-info"));
   const history = useHistory();
   return (
     <div>
-      <Navbar className='center'>
-        <Container>
-          <Navbar.Brand>User Profile</Navbar.Brand>
-          <Nav className="me-auto navbar_wrapper"></Nav>
-        </Container>
-      </Navbar>
+      <div>
+        <div className="">
+      </div>
+        <h1>User Profile</h1>
+      </div>
       <hr />
-      <Form>
+      {/* <Sidebar /> */}
+      <Container>
+      <Row className="justify-content-center">
+        <Col md={6}>
+        <Form>
         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
           <Form.Label column sm="2">
-            First Name
+            First Name  :
           </Form.Label>
           <Col sm="10">
             <Form.Control plaintext readOnly defaultValue={user.firstName} />
@@ -27,7 +31,7 @@ function Profile() {
         </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
           <Form.Label column sm="2">
-            Last Name
+            Last Name  :
           </Form.Label>
           <Col sm="10">
             <Form.Control plaintext readOnly defaultValue={user.lastName} />
@@ -35,7 +39,7 @@ function Profile() {
         </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
           <Form.Label column sm="2">
-            Address
+            Address  :
           </Form.Label>
           <Col sm="10">
             <Form.Control plaintext readOnly defaultValue={user.address} />
@@ -43,7 +47,7 @@ function Profile() {
         </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
           <Form.Label column sm="2">
-            Phone
+            Phone  :
           </Form.Label>
           <Col sm="10">
             <Form.Control plaintext readOnly defaultValue={user.phone} />
@@ -51,7 +55,7 @@ function Profile() {
         </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
           <Form.Label column sm="2">
-            Email
+            Email  :
           </Form.Label>
           <Col sm="10">
             <Form.Control plaintext readOnly defaultValue={user.email} />
@@ -59,13 +63,75 @@ function Profile() {
         </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
           <Form.Label column sm="2">
-            Birthday
+            Birthday  :
           </Form.Label>
           <Col sm="10">
             <Form.Control plaintext readOnly defaultValue={user.birthday} />
           </Col>
         </Form.Group>
       </Form>
+      </Col>
+      </Row>
+      </Container>
+      
+      {/* <div className="">
+        <h1>User Profile</h1>
+      </div> */}
+      {/* <hr style={{ border: "1px solid #17202A " }} />
+      <div style={{ padding: "0.2rem" }}>
+        <div>
+          <span style={{ padding: "10px" }}>First Name</span>
+          <span style={{ padding: "10px" }}>:</span>
+
+          <span>
+            <strong>{user.firstName}</strong>
+          </span>
+        </div>
+        <div>
+          <span style={{ padding: "10px" }}>Last Name</span>
+          <span style={{ padding: "10px" }}>:</span>
+
+          <span>
+            <strong>{user.lastName}</strong>
+          </span>
+        </div>
+        <div>
+          <span style={{ padding: "10px" }}>User1</span>
+          <span style={{ padding: "10px" }}>:</span>
+
+          <span>
+            <strong>{user.address}</strong>
+          </span>
+        </div>
+
+        <div>
+          <span style={{ padding: "10px" }}>Phone</span>
+          <span style={{ padding: "10px" }}>:</span>
+
+          <span>
+            <strong>{user.phone}</strong>
+          </span>
+        </div>
+
+        <div>
+          <span style={{ padding: "10px" }}>Email</span>
+          <span style={{ padding: "10px" }}>:</span>
+
+          <span>
+            <strong>{user.email}</strong>
+          </span>
+        </div>
+
+        <div>
+          <span style={{ padding: "10px" }}>Birthday</span>
+          <span style={{ padding: "10px" }}>:</span>
+
+          <span>
+            <strong>{user.birthday}</strong>
+          </span>
+        </div>
+
+      </div> */}
     </div>
   );
 }

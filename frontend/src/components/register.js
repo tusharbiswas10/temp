@@ -32,8 +32,15 @@ function Register() {
     })
 
     result = await result.json()
-    localStorage.setItem("user-info", JSON.stringify(result))
-    history.push("/profile")
+    // localStorage.setItem("user-info", JSON.stringify(result))
+    // history.push("/profile")
+    if (email === "admin@localhost.local" && password === "admin") {
+      localStorage.setItem("user-info", JSON.stringify(result));
+      history.push("/admin"); // Redirect to admin page
+    } else {
+      localStorage.setItem("user-info", JSON.stringify(result));
+      history.push("/profile"); // Redirect to profile page
+    }
   }
 
   return (

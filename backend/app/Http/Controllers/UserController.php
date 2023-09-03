@@ -25,4 +25,10 @@ class UserController extends Controller
         $user= User::where('email',$req->email)->first();
         return $user;
     }
+
+    function list(){
+        return User::all();
+    }
+
+
 }
